@@ -1,0 +1,12 @@
+{
+  "name": "true-blue-website",
+  "version": "1.0.0",
+  "description": "True Blue Excellence - Irrigation Specialists Website",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

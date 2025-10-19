@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - True Blue Excellence</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-white text-charcoal">
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <!-- Gallery Filter -->
+    <section class="py-8 bg-light-grey">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button id="filter-all" class="filter-btn px-6 py-3 bg-navy text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300" data-filter="all">All Projects</button>
+                <button id="filter-residential" class="filter-btn px-6 py-3 bg-white text-navy hover:bg-navy hover:text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300" data-filter="residential">Residential</button>
+                <button id="filter-commercial" class="filter-btn px-6 py-3 bg-white text-navy hover:bg-navy hover:text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300" data-filter="commercial">Commercial</button>
+                <button id="filter-sports" class="filter-btn px-6 py-3 bg-white text-navy hover:bg-navy hover:text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300" data-filter="sports">Sports Facilities</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-navy text-center">Featured Projects</h2>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16">Discover how we've transformed landscapes across Alberton with our innovative irrigation solutions.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Residential Projects -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" data-category="residential">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="assets/images/services/residential-irrigation.jpg" 
+                             alt="Residential Garden Transformation" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/003366/FFFFFF/webp?text=Residential+Project';">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Modern Home System</h3>
+                            <p class="text-white/90">Complete smart irrigation system with weather-based controls and mobile app integration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Project -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" data-category="commercial">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="assets/images/services/commercial-systems.jpg" 
+                             alt="Commercial Complex" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/003366/FFFFFF/webp?text=Commercial+Project';">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Business Complex</h3>
+                            <p class="text-white/90">Large-scale automated irrigation system for extensive commercial landscaping.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Facility -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" data-category="sports">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="assets/images/services/sports-fields.jpg" 
+                             alt="Sports Field" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/003366/FFFFFF/webp?text=Sports+Facility';">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Professional Sports Field</h3>
+                            <p class="text-white/90">High-performance irrigation system for optimal turf conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Projects -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" data-category="residential">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="assets/images/services/maintenance.jpg" 
+                             alt="Garden Transformation" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/003366/FFFFFF/webp?text=Garden+Project';">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Garden Transformation</h3>
+                            <p class="text-white/90">Complete landscape renovation with smart water management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Park -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" data-category="commercial">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="assets/images/services/commercial-systems.jpg" 
+                             alt="Office Park" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/003366/FFFFFF/webp?text=Office+Park';">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Office Park</h3>
+                            <p class="text-white/90">Comprehensive irrigation solution for corporate landscapes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Golf Course -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" data-category="sports">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="assets/images/services/sports-fields.jpg" 
+                             alt="Golf Course" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/003366/FFFFFF/webp?text=Golf+Course';">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Golf Course</h3>
+                            <p class="text-white/90">Precision irrigation for perfect playing conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Stats -->
+    <section class="py-16 bg-light-grey">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-navy mb-2">500+</div>
+                    <p class="text-gray-600">Projects Completed</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-navy mb-2">20+</div>
+                    <p class="text-gray-600">Years Experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-navy mb-2">30%</div>
+                    <p class="text-gray-600">Water Savings</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-navy mb-2">100%</div>
+                    <p class="text-gray-600">Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <!-- Component Loader Script -->
+    <script>
+        // Function to load HTML components
+        async function loadComponent(elementId, path) {
+            try {
+                const response = await fetch(path);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${path}:`, error);
+            }
+        }
+
+        // Load components
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header', '/components/header.html');
+            loadComponent('footer', '/components/footer.html');
+        });
+    </script>
+
+    <!-- Gallery Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            // Function to update active button state
+            function updateActiveButton(activeButton) {
+                filterButtons.forEach(btn => {
+                    if (btn === activeButton) {
+                        btn.classList.remove('bg-white', 'text-navy');
+                        btn.classList.add('bg-navy', 'text-white');
+                    } else {
+                        btn.classList.remove('bg-navy', 'text-white');
+                        btn.classList.add('bg-white', 'text-navy');
+                    }
+                });
+            }
+
+            // Function to filter gallery items
+            function filterGallery(category) {
+                galleryItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (category === 'all' || itemCategory === category) {
+                        item.style.display = '';
+                        item.classList.remove('opacity-0');
+                        item.classList.add('opacity-100');
+                    } else {
+                        item.classList.remove('opacity-100');
+                        item.classList.add('opacity-0');
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+
+            // Add click event listeners to filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-filter');
+                    updateActiveButton(button);
+                    filterGallery(category);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

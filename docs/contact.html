@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - True Blue Excellence</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Add your EmailJS public key here
+            emailjs.init("ljB0sD4CZORE3GpBF");
+        })();
+    </script>
+</head>
+<body class="bg-white text-charcoal">
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <!-- Contact Form and Info -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-navy text-center">Get in Touch</h2>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16">Whether you need a new irrigation system or maintenance for an existing one, we're here to help.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Left Column -->
+                <div class="space-y-8">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-clipboard-list text-xl text-navy"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-navy">Request a Free Assessment</h3>
+                        </div>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="name">Full Name</label>
+                                <input type="text" id="name" name="user_name" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-navy" placeholder="Enter your name" required>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2" for="email">Email Address</label>
+                                    <input type="email" id="email" name="user_email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-navy" placeholder="Enter your email" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2" for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="user_phone" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-navy" placeholder="Enter your phone" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="service">Service Type</label>
+                                <select id="service" name="service_type" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-navy" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="Residential Irrigation">Residential Irrigation</option>
+                                    <option value="Commercial Irrigation">Commercial Systems</option>
+                                    <option value="Sports Field Irrigation">Sports Field Irrigation</option>
+                                    <option value="Repairs & Maintenance">Repairs & Maintenance</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="message">Project Details</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-navy" placeholder="Tell us about your project" required></textarea>
+                            </div>
+                            
+                            <!-- Form Status Messages -->
+                            <div id="form-status" class="hidden">
+                                <div id="loading" class="hidden">
+                                    <p class="text-navy text-center"><i class="fas fa-spinner fa-spin mr-2"></i>Sending your request...</p>
+                                </div>
+                                <div id="success" class="hidden">
+                                    <p class="text-green-600 text-center"><i class="fas fa-check-circle mr-2"></i>Your message has been sent successfully!</p>
+                                </div>
+                                <div id="error" class="hidden">
+                                    <p class="text-red-600 text-center"><i class="fas fa-exclamation-circle mr-2"></i>There was an error sending your message. Please try again.</p>
+                                </div>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full bg-navy text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center">
+                                <span>Submit Request</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Our Process -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-tasks text-xl text-navy"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-navy">Our Process</h3>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-search text-xl text-navy"></i>
+                                </div>
+                                <p class="font-bold text-navy">Assess</p>
+                                <p class="text-sm text-gray-600">Site evaluation and consultation</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-drafting-compass text-xl text-navy"></i>
+                                </div>
+                                <p class="font-bold text-navy">Design</p>
+                                <p class="text-sm text-gray-600">Custom system planning</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-wrench text-xl text-navy"></i>
+                                </div>
+                                <p class="font-bold text-navy">Install</p>
+                                <p class="text-sm text-gray-600">Professional installation</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-cog text-xl text-navy"></i>
+                                </div>
+                                <p class="font-bold text-navy">Maintain</p>
+                                <p class="text-sm text-gray-600">Ongoing support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="space-y-8">
+                    <!-- Contact Information -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-address-card text-xl text-navy"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-navy">Contact Information</h3>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 p-4 bg-light-grey rounded-lg">
+                                <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-lg text-navy"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Phone</h4>
+                                    <p class="text-gray-600">076 031 3960 (Available Mon-Fri, 8am-5pm)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-light-grey rounded-lg">
+                                <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-lg text-navy"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <p class="text-gray-600">info@trueblueirrigation.co.za</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Area Map -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map text-xl text-navy"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-navy">Service Area</h3>
+                        </div>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-light-grey">
+                            <img 
+                                src="assets/images/maps/service-area-map.jpg" 
+                                alt="True Blue Irrigation Service Area Map - Greater Johannesburg"
+                                class="w-full h-60 object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/1200x675/003366/FFFFFF/webp?text=Service+Area+Map';">
+                        </div>
+                        <div class="mt-4 p-4 bg-light-grey rounded-lg">
+                            <h4 class="font-bold mb-2">Service Areas Include:</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                                <div>
+                                    <ul class="space-y-1">
+                                        <li>• Sandton</li>
+                                        <li>• Randburg</li>
+                                        <li>• Rosebank</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="space-y-1">
+                                        <li>• Fourways</li>
+                                        <li>• Midrand</li>
+                                        <li>• Bryanston</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="space-y-1">
+                                        <li>• Johannesburg North</li>
+                                        <li>• Johannesburg East</li>
+                                        <li>• Surrounding Areas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <!-- Component Loader Script -->
+    <script>
+        // Function to load HTML components
+        async function loadComponent(elementId, path) {
+            try {
+                const response = await fetch(path);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${path}:`, error);
+            }
+        }
+
+        // Load components
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header', '/components/header.html');
+            loadComponent('footer', '/components/footer.html');
+        });
+    </script>
+
+    <!-- Contact Form Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const submitButton = document.getElementById('submit-btn');
+            const formStatus = document.getElementById('form-status');
+            const loadingStatus = document.getElementById('loading');
+            const successStatus = document.getElementById('success');
+            const errorStatus = document.getElementById('error');
+
+            function showStatus(statusElement) {
+                formStatus.classList.remove('hidden');
+                [loadingStatus, successStatus, errorStatus].forEach(status => {
+                    status.classList.add('hidden');
+                });
+                statusElement.classList.remove('hidden');
+            }
+
+            function resetForm() {
+                form.reset();
+                submitButton.disabled = false;
+                formStatus.classList.add('hidden');
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading status
+                submitButton.disabled = true;
+                showStatus(loadingStatus);
+
+                // Prepare template parameters
+                const templateParams = {
+                    user_name: form.user_name.value,
+                    user_email: form.user_email.value,
+                    user_phone: form.user_phone.value,
+                    service_type: form.service_type.value,
+                    message: form.message.value
+                };
+
+                // Send both emails using EmailJS
+                Promise.all([
+                    // Send notification to admin
+                    emailjs.send(
+                        'service_z2f7krl',
+                        'template_wxwus0o', // Replace with your admin template ID
+                        templateParams
+                    ),
+                    // Send confirmation to client
+                    emailjs.send(
+                        'service_z2f7krl',
+                        'template_q4uqhc7', // Replace with your client template ID
+                        templateParams
+                    )
+                ])
+                .then(function(response) {
+                    showStatus(successStatus);
+                    setTimeout(resetForm, 5000); // Reset form after 5 seconds
+                })
+                .catch(function(error) {
+                    console.error('EmailJS Error:', error);
+                    showStatus(errorStatus);
+                    submitButton.disabled = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
