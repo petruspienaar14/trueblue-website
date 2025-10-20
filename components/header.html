@@ -1,18 +1,22 @@
 <!-- Navigation -->
-<nav class="bg-white shadow-md">
+<nav class="bg-white shadow-md" role="navigation" aria-label="Main navigation">
     <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
-            <a href="/" class="flex items-center">
-                <img src="assets/images/logos/logo.png" alt="True Blue Excellence" class="h-14" 
+            <a href="/" class="flex items-center" aria-label="True Blue Excellence - Home">
+                <img src="assets/images/logos/logo.png" 
+                     alt="True Blue Excellence - Professional Irrigation Services" 
+                     class="h-14" 
+                     loading="eager"
+                     decoding="async"
                      onerror="this.onerror=null; this.src='https://placehold.co/280x56/003366/FFFFFF/webp?text=True+Blue+Excellence'; this.className='h-14 rounded';">
             </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="about.html" class="hover:text-navy nav-about">About</a>
-                <a href="services.html" class="hover:text-navy nav-services">Services</a>
-                <a href="gallery.html" class="hover:text-navy nav-gallery">Gallery</a>
-                <a href="contact.html" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 nav-contact">Contact</a>
+            <div class="hidden md:flex items-center space-x-8" role="menubar">
+                <a href="about.html" class="hover:text-navy nav-about" role="menuitem">About Us</a>
+                <a href="services.html" class="hover:text-navy nav-services" role="menuitem">Our Services</a>
+                <a href="gallery.html" class="hover:text-navy nav-gallery" role="menuitem">Project Gallery</a>
+                <a href="contact.html" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 nav-contact" role="menuitem">Contact Us</a>
             </div>
-            <button class="md:hidden">
+            <button id="mobile-menu-button" class="md:hidden" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
@@ -20,42 +24,16 @@
 </nav>
 
 <!-- Mobile Menu -->
-<div class="hidden md:hidden">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="index.html" class="block px-3 py-2 hover:bg-navy hover:text-white rounded-md">Home</a>
-        <a href="about.html" class="block px-3 py-2 hover:bg-navy hover:text-white rounded-md nav-about-mobile">About</a>
-        <a href="services.html" class="block px-3 py-2 hover:bg-navy hover:text-white rounded-md nav-services-mobile">Services</a>
-        <a href="gallery.html" class="block px-3 py-2 hover:bg-navy hover:text-white rounded-md nav-gallery-mobile">Gallery</a>
-        <a href="contact.html" class="block px-3 py-2 hover:bg-navy hover:text-white rounded-md nav-contact-mobile">Contact</a>
+<div id="mobile-menu" 
+     class="hidden fixed inset-x-0 top-[72px] bg-white shadow-lg transform translate-y-[-100%] transition-transform duration-300 ease-in-out md:hidden"
+     role="menu"
+     aria-label="Mobile navigation menu">
+    <div class="px-4 pt-2 pb-3 space-y-1">
+        <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-navy hover:text-white rounded-md transition-colors duration-200" role="menuitem">Home</a>
+        <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-navy hover:text-white rounded-md transition-colors duration-200 nav-about-mobile" role="menuitem">About Us</a>
+        <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-navy hover:text-white rounded-md transition-colors duration-200 nav-services-mobile" role="menuitem">Our Services</a>
+        <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-navy hover:text-white rounded-md transition-colors duration-200 nav-gallery-mobile" role="menuitem">Project Gallery</a>
+        <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-navy hover:text-white rounded-md transition-colors duration-200 nav-contact-mobile" role="menuitem">Contact Us</a>
     </div>
 </div>
 
-<!-- Mobile menu toggle script -->
-<script>
-    const mobileMenuButton = document.querySelector('button');
-    const mobileMenu = document.querySelector('.hidden.md\\:hidden');
-    
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    // Get current page path
-    const currentPath = window.location.pathname;
-    const pageName = currentPath.split('/').pop().replace('.html', '');
-
-    // Add active state to desktop nav
-    if (pageName) {
-        const activeNav = document.querySelector(`.nav-${pageName}`);
-        if (activeNav) {
-            activeNav.classList.add('text-navy', 'font-bold');
-            activeNav.classList.remove('hover:text-navy');
-        }
-        
-        // Add active state to mobile nav
-        const activeMobileNav = document.querySelector(`.nav-${pageName}-mobile`);
-        if (activeMobileNav) {
-            activeMobileNav.classList.add('bg-navy', 'text-white');
-            activeMobileNav.classList.remove('hover:bg-navy', 'hover:text-white');
-        }
-    }
-</script>

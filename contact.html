@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - True Blue Excellence</title>
+    <title>Contact True Blue Excellence - Professional Irrigation Services</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contact True Blue Excellence for professional irrigation services in Alberton. Request a free assessment for residential, commercial, or sports field irrigation systems.">
+    <meta name="keywords" content="contact True Blue Excellence, irrigation consultation, free irrigation assessment, irrigation quote, irrigation services Alberton, irrigation contractor contact">
+    <meta name="author" content="True Blue Excellence">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact True Blue Excellence - Get a Free Irrigation Assessment">
+    <meta property="og:description" content="Request a free consultation for professional irrigation services. Expert solutions for homes, businesses, and sports facilities.">
+    <meta property="og:image" content="https://trueblue-website.com/assets/images/maps/service-area-map.jpg">
+    <meta property="og:url" content="https://trueblue-website.com/contact.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact True Blue Excellence">
+    <meta name="twitter:description" content="Get a free irrigation system assessment from Alberton's leading irrigation specialists.">
+    <meta name="twitter:image" content="https://trueblue-website.com/assets/images/maps/service-area-map.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://trueblue-website.com/contact.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
     <link href="./dist/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -169,8 +197,10 @@
                         <div class="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden bg-light-grey">
                             <img 
                                 src="assets/images/maps/service-area-map.jpg" 
-                                alt="True Blue Irrigation Service Area Map - Greater Johannesburg"
+                                alt="True Blue Excellence Service Coverage Map - Serving Sandton, Randburg, Rosebank, Fourways, Midrand, and Greater Johannesburg Area" 
                                 class="w-full h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
                                 onerror="this.onerror=null; this.src='https://placehold.co/600x800/003366/FFFFFF/webp?text=Service+Area+Map';">
                         </div>
                         <div class="mt-4 p-4 bg-light-grey rounded-lg">
@@ -208,6 +238,56 @@
     <!-- Include Footer -->
     <div id="footer"></div>
 
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact True Blue Excellence",
+        "description": "Contact page for True Blue Excellence irrigation services. Request a free assessment for residential, commercial, or sports field irrigation systems.",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "True Blue Excellence",
+            "url": "https://trueblue-website.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+27-76-031-3960",
+                "contactType": "sales",
+                "areaServed": ["Sandton", "Randburg", "Rosebank", "Fourways", "Midrand", "Bryanston", "Johannesburg North", "Johannesburg East"],
+                "availableLanguage": "English",
+                "email": "info@trueblueirrigation.co.za",
+                "hoursAvailable": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                }
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Gauteng",
+                "addressCountry": "ZA"
+            }
+        },
+        "potentialAction": {
+            "@type": "AskAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://trueblue-website.com/contact.html",
+                "inLanguage": "en",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            },
+            "result": {
+                "@type": "Message",
+                "name": "Contact Form Submission"
+            }
+        }
+    }
+    </script>
+
     <!-- Component Loader Script -->
     <script>
         // Function to load HTML components
@@ -216,8 +296,76 @@
                 const response = await fetch(path);
                 const html = await response.text();
                 document.getElementById(elementId).innerHTML = html;
+                
+                // Initialize mobile menu after header is loaded
+                if (elementId === 'header') {
+                    initializeMobileMenu();
+                }
             } catch (error) {
                 console.error(`Error loading ${path}:`, error);
+            }
+        }
+
+        // Initialize mobile menu functionality
+        function initializeMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = mobileMenuButton.querySelector('i');
+            let isMenuOpen = false;
+            
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                
+                // Toggle menu visibility with animation
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    // Use setTimeout to ensure the display:block takes effect before adding the transform
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('translate-y-[-100%]');
+                        mobileMenuIcon.classList.remove('fa-bars');
+                        mobileMenuIcon.classList.add('fa-times');
+                    }, 10);
+                } else {
+                    mobileMenu.classList.add('translate-y-[-100%]');
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                    // Wait for animation to complete before hiding
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            // Toggle menu on button click
+            mobileMenuButton.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (isMenuOpen && 
+                    !mobileMenu.contains(event.target) && 
+                    !mobileMenuButton.contains(event.target)) {
+                    toggleMenu();
+                }
+            });
+
+            // Get current page path
+            const currentPath = window.location.pathname;
+            const pageName = currentPath.split('/').pop().replace('.html', '');
+
+            // Add active state to desktop nav
+            if (pageName) {
+                const activeNav = document.querySelector(`.nav-${pageName}`);
+                if (activeNav) {
+                    activeNav.classList.add('text-navy', 'font-bold');
+                    activeNav.classList.remove('hover:text-navy');
+                }
+                
+                // Add active state to mobile nav
+                const activeMobileNav = document.querySelector(`.nav-${pageName}-mobile`);
+                if (activeMobileNav) {
+                    activeMobileNav.classList.add('bg-navy', 'text-white');
+                    activeMobileNav.classList.remove('hover:bg-navy', 'hover:text-white');
+                }
             }
         }
 
